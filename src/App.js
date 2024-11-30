@@ -1,10 +1,10 @@
 import "./App.css"
-import AppModule1 from "./module1/lab_listsInReact/AppModule1.js"
+import AppModule1Forms from "./module1/lab_forms/form"
 
 function App() {
   return (
     <div className="App">
-      <AppModule1 />
+      <AppModule1Forms />
     </div>
   )
 }
