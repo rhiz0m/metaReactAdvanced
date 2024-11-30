@@ -1,5 +1,5 @@
 import "./App.css"
-import AppModule1Forms from "./module1/lab_forms/form"
+import AppModule1Forms from "./module1/lab_forms/AppModule1Forms"
 
 function App() {
   return (
