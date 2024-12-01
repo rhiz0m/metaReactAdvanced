@@ -18,10 +18,18 @@ function AppModule1Forms() {
   const [role, setRole] = useState("role")
 
   const getIsFormValid = () => {
-    return true
+    return (
+      firstName && lastName && password.value.length >= 8 && role !== "role"
+    )
   }
 
-  const clearForm = () => {}
+  const clearForm = () => {
+    setFirstName("")
+    setLastName("")
+    setEmail("")
+    setPassword({value: "", isTouched: false})
+    setRole("role")
+  }
 
   const handleSubmit = () => {
     alert("Account created!")
@@ -37,29 +45,49 @@ function AppModule1Forms() {
             <label>
               First name <sup>*</sup>
             </label>
-            <input placeholder="First name" />
+            <input
+              placeholder="First name"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
           </div>
           <div className="Field">
             <label>Last name</label>
-            <input placeholder="Last name" />
+            <input
+              placeholder="Last name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
           </div>
           <div className="Field">
             <label>
               Email address <sup>*</sup>
             </label>
-            <input placeholder="Email address" />
+            <input
+              placeholder="Email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
           <div className="Field">
             <label>
               Password <sup>*</sup>
             </label>
-            <input placeholder="Password" />
+            <input
+              placeholder="Password"
+              value={password.value}
+              onChange={(e) =>
+                setPassword({ ...password, value: e.target.value })
+              }
+              onBlur={() => setPassword({ ...password, isTouched: true })}
+            />
+            {password.isTouched && password.value.length < 8 ? <PasswordErrorMessage /> : null}
           </div>
           <div className="Field">
             <label>
               Role <sup>*</sup>
             </label>
-            <select>
+            <select value={role} onChange={(e) => setRole(e.target.value)}>
               <option value="role">Role</option>
               <option value="individual">Individual</option>
               <option value="business">Business</option>
