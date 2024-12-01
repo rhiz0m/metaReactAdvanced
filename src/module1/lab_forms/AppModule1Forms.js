@@ -27,13 +27,21 @@ function AppModule1Forms() {
     setFirstName("")
     setLastName("")
     setEmail("")
-    setPassword({value: "", isTouched: false})
+    setPassword({ value: "", isTouched: false })
     setRole("role")
   }
 
-  const handleSubmit = () => {
-    alert("Account created!")
-    clearForm()
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const isValid = getIsFormValid()
+
+    if (!isValid) {
+      alert("Please fix the the errors in the form!")
+      return
+    } else {
+      alert("Account created!")
+      clearForm()
+    }
   }
 
   return (
@@ -81,7 +89,9 @@ function AppModule1Forms() {
               }
               onBlur={() => setPassword({ ...password, isTouched: true })}
             />
-            {password.isTouched && password.value.length < 8 ? <PasswordErrorMessage /> : null}
+            {password.isTouched && password.value.length < 8 ? (
+              <PasswordErrorMessage />
+            ) : null}
           </div>
           <div className="Field">
             <label>
