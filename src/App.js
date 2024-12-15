@@ -4,7 +4,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import FetchDataAsyncAwait from "./module2/FetchDataAsyncAwait"
 import GoalApp from "./module2/GoalApp"
 import GiftCard from "./module2/Lab_giftCard"
-
+import UseEffectInTabs from "./module2/UseEffectInTabs"
+import UseReducer from "./module2/UseReducer"
 
 const queryClient = new QueryClient()
 
@@ -12,6 +13,8 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
+        <UseReducer />
+        <UseEffectInTabs />
         <GiftCard />
         <GoalApp />
         <FetchDataAsyncAwait />
