@@ -9,6 +9,7 @@ const FetchData = () => {
       .then((data) => {
         SetUser(data)
       })
+      .catch((error) => console.log(error))
   }
 
   React.useEffect(() => {
