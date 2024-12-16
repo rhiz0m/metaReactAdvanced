@@ -6,6 +6,7 @@ import GoalApp from "./module2/GoalApp"
 import GiftCard from "./module2/Lab_giftCard"
 import UseEffectInTabs from "./module2/UseEffectInTabs"
 import UseReducer from "./module2/UseReducer"
+import CustomHook from "./module2/Lab_customHooks"
 
 const queryClient = new QueryClient()
 
@@ -13,6 +14,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
+        <CustomHook />
         <UseReducer />
         <UseEffectInTabs />
         <GiftCard />
