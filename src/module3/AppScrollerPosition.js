@@ -53,7 +53,7 @@ const PointMouseLogger = ({ mousePosition }) => {
   )
 }
 
-function App() {
+function AppScrollerPosition() {
   return (
     <div className="App">
       <header className="Header">Little Lemon Restaurant 🍕</header>
@@ -63,4 +63,4 @@ function App() {
   )
 }
 
-export default App
+export default AppScrollerPosition

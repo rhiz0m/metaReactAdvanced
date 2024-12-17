@@ -8,6 +8,7 @@ import UseEffectInTabs from "./module2/UseEffectInTabs"
 import UseReducer from "./module2/UseReducer"
 import CustomHook from "./module2/Lab_customHooks"
 import AppRadio from "./module3/AppRadio"
+import AppScrollerPosition from "./module3/AppScrollerPosition"
 
 const queryClient = new QueryClient()
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
+        <AppScrollerPosition />
         <AppRadio />
         <CustomHook />
         <UseReducer />
