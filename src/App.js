@@ -7,6 +7,7 @@ import GiftCard from "./module2/Lab_giftCard"
 import UseEffectInTabs from "./module2/UseEffectInTabs"
 import UseReducer from "./module2/UseReducer"
 import CustomHook from "./module2/Lab_customHooks"
+import AppRadio from "./module3/AppRadio"
 
 const queryClient = new QueryClient()
 
@@ -14,6 +15,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
+        <AppRadio />
         <CustomHook />
         <UseReducer />
         <UseEffectInTabs />
