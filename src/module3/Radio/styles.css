@@ -1,11 +1,12 @@
 .RadioGroup {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  margin-bottom: 8px;
 }
 
 .RadioOption {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   cursor: pointer;
 }
 

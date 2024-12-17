@@ -1,4 +1,3 @@
-import "./App.css"
 import { RadioGroup, RadioOption } from "./Radio"
 import { useState } from "react"
 
